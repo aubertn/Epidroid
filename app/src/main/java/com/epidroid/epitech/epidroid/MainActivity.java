@@ -34,6 +34,7 @@ import java.util.List;
 
 
 public class MainActivity extends ActionBarActivity {
+    public NetworkManager netManager = new NetworkManager();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +56,7 @@ public class MainActivity extends ActionBarActivity {
                 login = e1.getText().toString();
                 pwd = e2.getText().toString();
 
-
-                NetworkManager.getJSON("http://epitech-api.herokuapp.com/");
+                netManager.getJSON("http://epitech-api.herokuapp.com/", login, pwd);
             }
 
         });
